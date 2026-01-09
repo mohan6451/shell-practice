@@ -3,6 +3,6 @@
 
 Date= date
 
-echo "timestamp: $Date"
+echo "timestamp: $Date +%D"
 
 

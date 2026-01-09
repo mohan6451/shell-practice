@@ -1,11 +1,17 @@
 #!/bin/bash
-echo "filename"
-read file
-git add $file ; 
 
-echo "comment"
-read comment
-git commit -m "$comment"
+
+read -p "enter filename: " file
+read -p "add comment: " comment
+
+
+
+
+
+
+git add {echo $file} ; 
+git commit -m "{echo $comment}";
+
 
 
 git push origin main
