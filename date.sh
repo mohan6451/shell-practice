@@ -1,8 +1,8 @@
 #!/bin/bash
 
 
-Date= date
+Date= date +%D
 
-echo "timestamp: $Date +%D"
+echo "timestamp: "$Date
 
 
