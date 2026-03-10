@@ -70,5 +70,26 @@ index : will start form "0"
 2. integers
 3. float
 4. boolean
+----------------------------------------------------------------
+
+Conditions:
+
+if [condition] ; then
+    #commands to execute if above condition is true
+elif [condition] ; then
+    #command to execute if this condition is true
+else 
+    #command to execute if above condition is false
+fi
 
 
+-----------------------------------------------------------------------
+
+exit status:
+
+$? -> previous command exit status
+
+0 : success
+1-127 : fail
+
+note: root user id="0"   (id -u)
