@@ -1,0 +1,74 @@
+automation goals: 
+
+1. speed and accuracy
+2. no human errors
+3. consistency
+4. scalability - can work for infinite no. of servers
+5. documentation - using comment(#) we can mention it like step by step procedure. 
+6. reusability. 
+
+
+
+#!/bin/bash  -> is called as shebang and it should be the firstline and the interpret to check the syntax of the cript and execute them.
+
+sh == bash
+.sh is the extension. 
+
+echo "hello world"
+
+# == comment, is to provide the info. for the script 
+
+
+to execute the file or to run the file. use
+
+sh <fileName> or 
+
+bash <fileName>  or 
+
+./<fileName>  # If you have the executable access.
+
+----------------------------------------
+
+variableName = value 
+person1 = mohan
+
+variable is represented as $person1
+
+
+<var_name>=<context>
+
+to call that context using this variable as $<var_name>
+-----------------------------------------------
+
+Time: date --help -> for help
+date                       -> Tue Mar 10 12:59:39 IST 2026
+date +%y-%m-%d=%H-%M-%S    ->  26-03-10=12-57-45
+
+-----------------------------------
+variables - will use when same content used several places in script | <var_name>= <context>  ==>echo $<var_name>
+datatypes
+conditions
+functions
+loops
+error handlings
+------------------------------------------------------
+
+variables:
+
+1. declare and assign values inside the script
+2. pass from outside as arguments
+3. read command
+4. ENV variables
+5. Special variables
+------------------------------------------------------------
+
+datatypes: in shell scripting there is no specific datatypes. can use only arrays.
+
+index : will start form "0"
+
+1. string
+2. integers
+3. float
+4. boolean
+
+
