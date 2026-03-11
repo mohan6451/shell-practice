@@ -11,5 +11,5 @@ EOF
 
 for i in {1..10}
 do 
-  echo $id
+  echo $i
 done
