@@ -7,5 +7,5 @@ y= '\e[33m' #Yellow
 N= '\e[0m' #No Color
 
 
-echo -e "\e[32m Hi Mohan!! $N"
-echo happy morning
+echo -e "$G   Hi Mohan!! $N"
+echo "happy morning"
