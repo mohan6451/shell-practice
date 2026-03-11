@@ -10,7 +10,7 @@ script_name=$( echo $0 | cut -d '.' -f1 ) # d is the delimit and '.' is the deli
 log_file="$logs_folder/$script_name.log"
 
 sudo mkdir -p $logs_folder
-echo "Scripting start time: $(date)"  &>>$log_file
+echo "Scripting start time: $(date)" | tee -a $log_file
 
 userID=$(id -u)
 
@@ -48,3 +48,6 @@ if [ $? -ne 0 ]; then
 else 
     echo -e "python3 already exist.. $Y skipping $NC"      &>>$log_file
 fi
+
+
+echo "script end date: $(date)" | tee -a $log_file
