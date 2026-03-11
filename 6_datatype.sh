@@ -23,4 +23,4 @@ echo "some of my colleague's are ${colleagues[@]}"
 
 echo "one of my colleague is ${colleagues[$2]}"
 
-echo "one of my colleague is ${colleagues[3]}"
+echo "one of my colleague is ${colleagues[$3]}"

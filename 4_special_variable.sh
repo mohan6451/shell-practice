@@ -15,7 +15,10 @@ echo "Argument_count: $#"  # argument count
 echo "current working directory: $PWD"
 echo "who is running: $USER"
 echo "home directory: $HOME"
+
+to send any process to background, after the command add "&" Ex: sleep 10 &
 echo "PID of the last command in background: $!"
+
 
 
 << EOF
