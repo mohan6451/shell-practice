@@ -17,8 +17,9 @@ VALIDATE() {
     fi
 }
 
+dnf install https://repo.mysql.com/mysql80-community-release-el9-1.noarch.rpm
 dnf install mysql -y
-VALIDATE $? "MySQL"
+VALIDATE $? "mysql-community-server"
 
 dnf install nginx -y
 VALIDATE $? "Ngin2"
