@@ -5,6 +5,12 @@ R="\e[31m" #Red
 G="\e[32m" #Green
 Y="\e[33m" #Yellow
 NC="\e[0m" #No Color
+logs_folder="/var/log/shell_scripting"
+script_name=$( echo $0 | cut -d '.' -f1 ) # d is the delimit and '.' is the delimiter. f1 is 1st part & f2 is second part of delimiter.
+log_file="$logs_folder/$script_name.log"
+
+sudo mkdir -p $logs_folder
+echo "Scripting start time: $(date)" | tee -a $log_file # tee -a -> is used to append, it show on screen on drafted to the logs 
 
 
 userID=$(id -u)
@@ -20,41 +26,24 @@ VALIDATE() {
         echo -e "Error:: Installing $2  $R failed $NC"
         exit 1
     else 
-        echo -e "Installing $2 ... $G Success $NC"
+        echo -e "Installing $2 ... $G Successful $NC"
     fi
 }
-# $@ -> for all arguments in separate words
+# $@ -> for all arguments in separate words,
 
-for package in $@
+for package in $@ # arguments will provide while running this shell file. 
 do 
     # to check package already installed or not
-    dnf list installed $package 
+    dnf list installed $package  &>>$log_file
     
     # if exit status is 0, already installed, -ne 0 means need to install it. 
     if [$? -ne o]; then 
         dnf install $package -y
         VALIDATE $? $package
     else 
-         echo -e "$package is already installed. So, $Y Skipping $NC"
+         echo -e "$package is already installed. So, $Y Skipping $NC"  | tee -a $log_file   
     fi
 
 done
 
 
-
-<<EOF
-
-
-
-
-<<EOF
-
-
-if [ $? -ne 0 ]; then
-    dnf install nginx -y
-    VALIDATE $? "Nginx"
-else 
-    echo -e "nginx already exist.. $Y skipping $NC"
-fi
-
-EOF
