@@ -7,19 +7,6 @@ Y="\e[33m" #Yellow
 NC="\e[0m" #No Color
 
 
-for package in $@
-do 
-    echo "these are the $package" 
-
-done
-
-
-
-<<EOF
-
-if dnf list installed $package
-
-
 userID=$(id -u)
 
 if [ $userID -ne 0 ] ; then 
@@ -40,10 +27,23 @@ VALIDATE() {
 
 for package in $@
 do 
-    if dnf list installed $package
-
+    # to check package already installed or not
+    dnf list installed $package 
+    
+    # if exit status is 0, already installed, -ne 0 means need to install it. 
+    if [$? -ne o]; then 
+        dnf install $package -y
+        VALIDATE $? $package
+    else 
+         echo -e "$package is already installed. So, $Y Skipping $NC"
+    fi
 
 done
+
+
+
+<<EOF
+
 
 
 
