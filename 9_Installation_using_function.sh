@@ -18,7 +18,7 @@ FUNCTION () {
 
 }
 
-dbf install mysql -y
+dnf install mysql -y
 
 VALIDATE $? "MySQL"
 
