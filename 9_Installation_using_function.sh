@@ -7,7 +7,7 @@ if [ $userID -ne 0 ] ; then
     exit 1  # failure is other than 0
 fi
 
-VALIDATE () {
+VALIDATE() {
 
     if [ $1 -ne 0 ] ; then
         echo "Error:: Installing $2 is failed"
