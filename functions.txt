@@ -1,0 +1,4 @@
+sudo(root) user is the 1st user and userID is "0"
+
+cmd: sudo id
+
