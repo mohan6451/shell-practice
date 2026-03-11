@@ -10,7 +10,7 @@ script_name=$( echo $0 | cut -d '.' -f1 ) # d is the delimit and '.' is the deli
 log_file="$logs_folder/$script_name.log"
 
 sudo mkdir -p $logs_folder
-echo "Scripting start time: $(date)" | tee -a $log_file
+echo "Scripting start time: $(date)" | tee -a $log_file # tee -a -> is used to append, it show on screen on drafted to the logs 
 
 userID=$(id -u)
 
