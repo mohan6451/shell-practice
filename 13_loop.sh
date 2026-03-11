@@ -44,5 +44,5 @@ do
     else 
          echo -e "$package is already installed. So, $Y Skipping $NC"  | tee -a $log_file   
     fi
-    echo "$package package is installed at time $(date)" | tee -a $log_file 
+    echo "$package package is installed at time $(date)"  &>>$log_file 
 done
