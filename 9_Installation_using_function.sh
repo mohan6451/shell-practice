@@ -17,12 +17,15 @@ VALIDATE() {
     fi
 }
 
+rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql-2023
 dnf install https://repo.mysql.com/mysql80-community-release-el9-1.noarch.rpm
 dnf install mysql-community-server -y
-VALIDATE $? "mysql-community-server"
+VALIDATE $? "mysql-"
 
+<<EOF
 dnf install nginx -y
 VALIDATE $? "Ngin2"
 
 dnf install python -y
 VALIDATE $? "Python"
+EOF
