@@ -18,13 +18,13 @@ FUNCTION () {
 
 }
 
-apt install mysql -y
+dbf install mysql -y
 
 VALIDATE $? "MySQL"
 
 << EOF
 
-apt install nginx -y
+dnf install nginx -y
 
 VALIDATE $? "Nginx"
 
