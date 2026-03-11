@@ -23,10 +23,11 @@ fi
 VALIDATE() {
 
     if [ $1 -ne 0 ] ; then
-        echo -e "Error:: Installing $2  $R failed $NC"
+        echo -e "Error:: Installing $2  $R failed $NC"   | tee -a $log_file
         exit 1
     else 
-        echo -e "Installing $2 ... $G Successful $NC"
+        echo -e "Installing $2 ... $G Successful $NC"    | tee -a $log_file
+    
     fi
 }
 # $@ -> for all arguments in separate words,
@@ -38,12 +39,10 @@ do
     
     # if exit status is 0, already installed, -ne 0 means need to install it. 
     if [$? -ne o]; then 
-        dnf install $package -y
+        dnf install $package -y   &>>$log_file
         VALIDATE $? $package
     else 
          echo -e "$package is already installed. So, $Y Skipping $NC"  | tee -a $log_file   
     fi
-
+    echo "$package package is installed at time $(date)" | tee -a $log_file 
 done
-
-
