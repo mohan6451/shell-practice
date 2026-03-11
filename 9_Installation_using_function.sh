@@ -22,6 +22,10 @@ VALIDATE() {
 dnf install nginx -y
 VALIDATE $? "Ngin2"
 
+dnf install python -y
+VALIDATE $? "Python"
+
+
 <<EOF
 
 dnf install https://repo.mysql.com/mysql80-community-release-el9-1.noarch.rpm
@@ -30,6 +34,5 @@ VALIDATE $? "mysql-"
 
 
 
-dnf install python -y
-VALIDATE $? "Python"
+
 EOF
