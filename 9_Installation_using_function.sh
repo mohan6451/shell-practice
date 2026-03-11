@@ -20,7 +20,7 @@ VALIDATE() {
 
 
 dnf install nginx -y
-VALIDATE $? "Ngin2"
+VALIDATE $? "Nginx"  # '$?' = argument1 ($1) & Nginx is argument2 ($2)
 
 dnf install python -y
 VALIDATE $? "Python"

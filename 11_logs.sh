@@ -28,7 +28,7 @@ VALIDATE() {
         echo -e "Error:: Installing $2  $R failed $NC"  &>>$log_file
         exit 1
     else 
-        echo -e "Installing $2 ... $G Success $NC"  &>>$log_file
+        echo -e "Installing $2 ... $G Success $NC"  | tee -a $log_file 
     fi
 }
 
