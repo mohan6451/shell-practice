@@ -19,10 +19,10 @@ fi
 VALIDATE() {
 
     if [ $1 -ne 0 ] ; then
-        echo -e "Error:: Installing $2 is $R failed $NC"
+        echo -e "Error:: Installing $2  $R failed $NC"
         exit 1
     else 
-        echo -e "$G Installing $2 is Success $NC"
+        echo -e "Installing $2 ... $G Success $NC"
     fi
 }
 
