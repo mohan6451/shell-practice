@@ -17,13 +17,18 @@ VALIDATE() {
     fi
 }
 
+
+
+dnf install nginx -y
+VALIDATE $? "Ngin2"
+
+<<EOF
+
 dnf install https://repo.mysql.com/mysql80-community-release-el9-1.noarch.rpm
 dnf install mysql-community-server -y
 VALIDATE $? "mysql-"
 
-<<EOF
-dnf install nginx -y
-VALIDATE $? "Ngin2"
+
 
 dnf install python -y
 VALIDATE $? "Python"
