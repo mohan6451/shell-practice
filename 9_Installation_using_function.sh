@@ -22,14 +22,12 @@ dnf install mysql -y
 
 VALIDATE $? "MySQL"
 
-<< EOF
+
 
 dnf install nginx -y
 
-VALIDATE $? "Nginx"
+VALIDATE $? "Ngin2"
 
 dnf install python -y
 
 VALIDATE $? "Python"
-
-EOF
