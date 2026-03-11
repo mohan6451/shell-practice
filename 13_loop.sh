@@ -9,8 +9,7 @@ NC="\e[0m" #No Color
 
 for package in $@
 do 
-    if dnf list installed $package
-
+    echo "these are the $package" 
 
 done
 
@@ -18,6 +17,7 @@ done
 
 <<EOF
 
+if dnf list installed $package
 
 
 userID=$(id -u)
