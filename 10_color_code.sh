@@ -42,3 +42,11 @@ if [ $? -ne 0 ]; then
 else 
     echo -e "python3 already exist.. $Y skipping $NC"
 fi
+
+dnf list installed mongodb
+if [ $? -ne 0 ]; then
+    dnf install -y mongodb-org
+    VALIDATE $? "mongoDB"
+else 
+    echo -e "mongoDB already exist.. $Y skipping $NC"
+fi
