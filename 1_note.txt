@@ -78,6 +78,12 @@ echo "home directory: $HOME"
 
 to send any process to background, after the command add "&" Ex: sleep 10 &
 echo "PID of the last command in background: $!"
+
+-----------------------------------------------
+less then  -> -it 
+greater than -> -gt
+equal to -> eq
+not equal to -> ne
 ------------------------------------------------------------
 
 datatypes: in shell scripting there is no specific datatypes. can use only arrays.
@@ -137,3 +143,42 @@ aws s3 ls -> to verify provided credentials are correct.
     --boot-disk-size=DISK_SIZE \
     --network=NETWORK_NAME \
     --subnet=SUBNET_NAME
+---------------------------------------------------------
+
+SED editor:
+
+SED: streamline editor
+
+=====by line no. =================
+
+sed '1i <text>' <fileName>   -> for temporary adding
+
+sed -i '1i <text>' <fileName>   -> for actually adding content to respected file.
+
+1i -> 1 is line & I is insert
+
+i -> insert
+a -> append (add content after that line)
+d -> delete  ex: sed '5d' <fileName> 
+
+===========by pattern =================
+
+sed '/<pattern(word)/d <fileName>    -> delete the lines, where the pattern presents in that file.
+
+============replacing the line with content by line no.  ==================
+
+sed '3c hello guru' <filename>
+
+3c : 3=line & c=change
+
+==========replacing the lines with content by pattern ==============
+
+sed '/<pattern>/c <content>' <filename>
+
+
+=====================substitute =====================
+
+sed 's/<content in file>/<content to be replaced>/' <filename>
+           - it will change the 1st occurance in the line. if need to replace globally then
+
+sed 's/<content in file>/<content to be replaced>/g' <filename>
