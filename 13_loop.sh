@@ -34,7 +34,7 @@ VALIDATE() {
 
 for package in $@ # arguments will provide while running this shell file. 
 do 
-    # to check package already installed or not
+    # to check package already installed or not 
     dnf list installed $package  &>>$log_file
     
     # if exit status is 0, already installed, -ne 0 means need to install it. 
@@ -44,5 +44,5 @@ do
     else 
          echo -e "$package is already installed. So, $Y Skipping $NC"  | tee -a $log_file   
     fi
-    echo "$package package installation completed at time $(date)"  &>>$log_file 
+    echo "$package package installation completed at time $(date)" | tee -a $log_file
 done
