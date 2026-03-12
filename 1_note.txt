@@ -117,3 +117,23 @@ $? -> previous command exit status
 
 note: root user id="0"   (id -u)
 
+------------------------------------------------------------
+
+for making script automated, create an user with administration access policy. 
+to login with this acc. need credentials, so create access keys for non human integration.
+
+
+after creating user with required policies and access keys, to auhenticate with aws use cmd: "aws configure"
+aws s3 ls -> to verify provided credentials are correct. 
+
+
+ using GCP(google cloud platform):
+
+ gcloud compute instances create INSTANCE_NAME \
+    --machine-type=MACHINE_TYPE \
+    --zone=ZONE \
+    --image-family=IMAGE_FAMILY \
+    --image-project=IMAGE_PROJECT \
+    --boot-disk-size=DISK_SIZE \
+    --network=NETWORK_NAME \
+    --subnet=SUBNET_NAME
