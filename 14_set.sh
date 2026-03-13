@@ -1,6 +1,8 @@
 #!/bin/bash
 
-set -euo pipefail  
+set -e #to stop the script 
+
+# set -euo pipefail  
 
 echo "adding error in next line"
 
