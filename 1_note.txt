@@ -182,3 +182,13 @@ sed 's/<content in file>/<content to be replaced>/' <filename>
            - it will change the 1st occurance in the line. if need to replace globally then
 
 sed 's/<content in file>/<content to be replaced>/g' <filename>
+
+
+============idempodent==============
+scripts  should give same results even you run them infinte times is called Idempotency.
+
+get - idempodent
+post - chance of duplication of error.. we need work for Idempotency. ex: trying to create multiple user accounts with one emailID.
+put/update - updating the same kind of data repeactedly. 
+Delete - if deleting the already deleted data multiple times, then tell it is deleted already.
+
