@@ -192,3 +192,9 @@ post - chance of duplication of error.. we need work for Idempotency. ex: trying
 put/update - updating the same kind of data repeactedly. 
 Delete - if deleting the already deleted data multiple times, then tell it is deleted already.
 
+------------------set ---------------------------
+set -euo pipefail   # is the default line in any shell script denotes that the script should fail when seen an error.
+
+set -e  
+
+trap # is a command used to call when any error in the script while executing.
