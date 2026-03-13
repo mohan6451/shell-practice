@@ -6,12 +6,10 @@ set -euo pipefail
 
 error(){
 
-echo "there is an error"
+echo "there is an error in $LINENO & the command: $BASH_COMMAND"
 
 }
-
 trap error ERR
-
 
 echo "testing the set command"
 echo "adding error in next line"

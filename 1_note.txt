@@ -184,7 +184,7 @@ sed 's/<content in file>/<content to be replaced>/' <filename>
 sed 's/<content in file>/<content to be replaced>/g' <filename>
 
 
-============idempodent==============
+===ERROR Handling =========idempodent==============
 scripts  should give same results even you run them infinte times is called Idempotency.
 
 get - idempodent
@@ -198,3 +198,5 @@ set -euo pipefail   # is the default line in any shell script denotes that the s
 set -e  
 
 trap # is a command used to call when any error in the script while executing.
+
+to know at which command script failed and line no. use $BASH_COMMAND & $LINENO.
