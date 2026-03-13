@@ -3,17 +3,19 @@
 #set -e #to stop the script 
 set -euo pipefail  
 
-
+<<EOF
 error(){
 
-echo "there is an error in $LINENO & the command: $BASH_COMMAND"
+echo "there is an error in line no.: $LINENO & the command: $BASH_COMMAND"
 
 }
-trap error ERR
+EOF
+
+trap 'echo "there is an error in line no.: $LINENO & the command: $BASH_COMMAND"' ERR
 
 echo "testing the set command"
 echo "adding error in next line"
 
-asdfsdf
+asdfsdf #here shell understands there is an error and signal is ERR
 
 echo "after the error"
