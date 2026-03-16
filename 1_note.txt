@@ -40,6 +40,8 @@ variable is represented as $person1
 to call that context using this variable as $<var_name>
 -----------------------------------------------
 
+read cmd is to 
+
 Time: date --help -> for help
 date                       -> Tue Mar 10 12:59:39 IST 2026
 date +%y-%m-%d=%H-%M-%S    ->  26-03-10=12-57-45
@@ -147,7 +149,7 @@ aws s3 ls -> to verify provided credentials are correct.
 
 SED editor:
 
-SED: streamline editor
+SED -> streamline editor
 
 =====by line no. =================
 
@@ -181,7 +183,8 @@ sed '/<pattern>/c <content>' <filename>
 sed 's/<content in file>/<content to be replaced>/' <filename>
            - it will change the 1st occurance in the line. if need to replace globally then
 
-sed 's/<content in file>/<content to be replaced>/g' <filename>
+sed 's/<content in file>/<content to be replaced>/g' <filename> 
+           - to replace the content globally in the script.
 
 
 ===ERROR Handling =========idempodent==============
@@ -200,3 +203,75 @@ set -e
 trap # is a command used to call when any error in the script while executing.
 
 to know at which command script failed and line no. use $BASH_COMMAND & $LINENO.
+
+ex:  set -euo pipefail  
+     trap 'echo "there is an error in line no.: $LINENO & the command: $BASH_COMMAND"' ERR
+
+Adding this two lines to script can get the error status and cmd which got failed with lineNo. 
+
+===========================================================
+
+Calling a script from another script. is of 2 ways:
+
+1. call by sh <scriptName.sh>   -- runs in different process, while calling script2 in script1 environment, script2 can't access script1 environment. no dependency 
+
+ex:   sh <scriptName.sh>   
+note: jsut calling the script
+1. script 2 can't access script1 environment
+2. both process are different and there is no relation between those 2 scripts
+3. script1 is not effected by script2 failure. 
+
+2. call by source  <scriptName.sh>  -- runs in the same process of script1, script2 can access the script1 envirionment. 
+
+ex: source <scriptName.sh>    
+
+note: 
+1. script1 is effected by script2 failure. because both runs in same processID.
+
+
+
+========================== CMD =============================================
+
+echo $PATH -> when we execute a command it will go and check in these directories. if that command is not there it will respond as "command not found".
+
+To find the path of any particular command: which <command>
+
+
+
+cmd to find the logs
+
+find <directory> -type f -name "*.log" -mtime +7 -size +2k
+
+type f -> FILE type | d - Directory
+mtime +<no.>  -> mtime - files modified in the last no. of days | no. -> means days count
+size +<size>c/k/M/G -> size of the file c- bytes | k- kilobytes | M- Megabytes | G- Gigabytes
+cmin +no. -> file changed in last no. of minutes.
+perm 644 -> finding files with specific permission.  
+empty -> find empty files or directory.
+
+du -sh <file with location
+
+touch -d 20250925 user.log
+=====================
+
+while loop:
+
+while [condition] do 
+
+..
+
+done < <input>
+
+1. If input is external file, then use -> done < <fileName.sh>
+2. If input is variable then, then use -> done <<< <$variable>
+
+
+IFS (Internal Field Separator)
+
+============================
+
+
+sh backup.sh <source-dir> <destination-dir> <days>(optional)
+
+$# -> Argument_count
+

@@ -3,13 +3,6 @@
 #set -e #to stop the script 
 set -euo pipefail  
 
-<<EOF
-error(){
-
-echo "there is an error in line no.: $LINENO & the command: $BASH_COMMAND"
-
-}
-EOF
 
 trap 'echo "there is an error in line no.: $LINENO & the command: $BASH_COMMAND"' ERR
 
