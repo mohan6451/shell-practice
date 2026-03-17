@@ -1,3 +1,8 @@
+Relative path and absolute path
+
+Absolute path: starts from the root /, full path.
+Relative path: starts from the current directory ($PWD), does not begin with "/".
+=================================================
 automation goals: 
 
 1. speed and accuracy
@@ -276,4 +281,36 @@ sh backup.sh <source-dir> <destination-dir> <days>(optional)
 $# -> Argument_count
 
 1. check 2 argument received or not.
-2. 
+2. check weather these dir. present or not.
+3. then find the *.log files.
+4. zip them and move to destination folder
+5. if zipping is success, then delete from source dir. 
+6. verify the log files deleted from source dir. 
+
+============================ Crontab ============================
+
+=> A scheduler in linux servers, we can schedule the scripts using Crontab.
+
+refer: Crontab.guru
+
+crontab -e             -> to edit 
+
+
+
+* * * * * <command-to-run or script loaction>
+============================= monitoring ==================================
+CPU, Memory, Hard Disk are the metrics need to monitor for checking server health.
+
+cmd's:
+Hard Disk: df -H
+
+df -hT | grep -v filesystem | awk '{print $6}'  # -v is to invert the grep 
+
+note: to remove the 
+
+CPU: top
+
+Memory: free
+
+
+
