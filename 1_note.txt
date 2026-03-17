@@ -275,3 +275,5 @@ sh backup.sh <source-dir> <destination-dir> <days>(optional)
 
 $# -> Argument_count
 
+1. check 2 argument received or not.
+2. 
